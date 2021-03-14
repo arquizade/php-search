@@ -4,9 +4,7 @@
 
         public static function function_one() {
             static::view('root_view');
-
         }
-        
     }
 
 ?>
