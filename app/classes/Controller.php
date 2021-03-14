@@ -2,7 +2,6 @@
 
     class Controller {
 
-
         public static function view($view,$array_variable=null){
             if(!empty($array_variable)){
                 extract($array_variable, EXTR_PREFIX_SAME,"wddx");
@@ -15,5 +14,6 @@
                 require_once('./app/models/'.$model.'.php');
             }
         }
+
     }
 ?>
