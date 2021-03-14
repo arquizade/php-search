@@ -2,7 +2,7 @@
     class Database {
     
         public static $host = "127.0.0.1";
-        public static $dbname = "app_db";
+        public static $dbname = "sykes_interview";
         public static $username = "root";
         public static $password = "password";
 
