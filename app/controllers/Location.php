@@ -7,9 +7,13 @@ class Location extends Controller {
         if(isset($_POST['location']) && !empty($_POST['location'])){
             $qdata = location_model::search_location_name($_POST['location']);
             if(!empty($qdata)){
-                $_SESSION['location_id'] = $qdata[0]['__pk'];
-                $_SESSION['checkin'] = date('Y-m-d', strtotime($_POST['checkin']));
-                $_SESSION['checkout'] = date('Y-m-d', strtotime($_POST['checkout']));
+                $_SESSION['location_id']    = $qdata[0]['__pk'];
+                $_SESSION['checkin']        = date('Y-m-d', strtotime($_POST['checkin']));
+                $_SESSION['checkout']       = date('Y-m-d', strtotime($_POST['checkout']));
+                $_SESSION['beachside']      = isset($_POST['beachside']) ? 1 : 0;
+                $_SESSION['allowpets']      = isset($_POST['allowpets']) ? 1 : 0;
+                $_SESSION['numguest']       = $_POST['numguest'];
+                $_SESSION['numbeds']        = $_POST['numbeds'];
 
                 header('Location: property-list?page=1');
             }else{
