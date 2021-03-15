@@ -30,9 +30,6 @@ class Location extends Controller {
         $edate = $_SESSION['checkout'];
         $page = ($_GET['page'] - 1) * $no_of_records_per_page;
         $property_list = location_model::fetch_properties($location,$sdate,$edate,$page,$no_of_records_per_page);
-
-        // print_r($property_list); exit();
-
         $tbody = array(); $result_count = 0;
         if(!empty($property_list)){
             $result_count = ceil(location_model::get_total_properties($location)[0][0] / $no_of_records_per_page);
